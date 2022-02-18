@@ -37,7 +37,6 @@ public class iframeTest {
 //		 System.out.println(iframes.size());
 //		
 //		
-		//System.out.println(driver.findElement(By.xpath("//iframe")).getSize());
 
 		driver.switchTo().frame(0);
 		
