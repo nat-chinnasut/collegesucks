@@ -12,7 +12,6 @@ import utilities.PropertiesReader;
 
 public class propertiesClass {
 
-	//
 	WebDriver driver;
 	private String url = PropertiesReader.getProperty("url");
 
@@ -24,11 +23,12 @@ public class propertiesClass {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
-	///// raising PR
+
 	
 	@Test
 	public void test1() {
 		
 	}
+
 
 }
