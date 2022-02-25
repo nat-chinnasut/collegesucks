@@ -1,10 +1,10 @@
 package Day5;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import java.util.Iterator;
 import java.util.List;
 
-import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -17,7 +17,7 @@ public class amazonListItems {
 
 	WebDriver driver;
 
-	@Before
+	@BeforeMethod
 	public void beforeMethod() {
 //		1) Open the browser
 //		2) Enter the URL “http://practice.automationtesting.in/”

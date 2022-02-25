@@ -1,10 +1,9 @@
 package Day4;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,7 +17,7 @@ public class dropDownTest {
 	WebDriver driver;
 	
 
-	@Before
+	@BeforeMethod
 	public void beforeMethod() {
 
 		WebDriverManager.chromedriver().setup();
@@ -28,8 +27,8 @@ public class dropDownTest {
 
 	}
 	
-	@Ignore
-	@Test
+	@Test(enabled = false)
+	
 	public void staticDropDown() throws InterruptedException {
 		
 		WebElement staticDropdown = driver.findElement(By.id("dropdown"));

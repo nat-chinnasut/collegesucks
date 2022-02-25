@@ -1,11 +1,11 @@
 package Day7;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,7 +19,7 @@ public class windowHandlesTest {
 	WebDriver driver;
 	private String url = "https://phptravels.com/demo";
 
-	@Before
+	@BeforeMethod
 	public void beforeMethod() {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();

@@ -1,9 +1,9 @@
 package Day5;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import java.util.List;
 
-import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,7 +15,7 @@ public class checkSlidders {
 
 	WebDriver driver;
 
-	@Before
+	@BeforeMethod
 	public void beforeMethod() {
 //		1) Open the browser
 //		2) Enter the URL “http://practice.automationtesting.in/”
