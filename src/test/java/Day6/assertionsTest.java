@@ -1,10 +1,10 @@
 package Day6;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,7 +16,7 @@ public class assertionsTest {
 
 	WebDriver driver;
 
-	@Before
+	@BeforeMethod
 	public void beforeMethod() {
 
 		WebDriverManager.chromedriver().setup();
@@ -32,7 +32,7 @@ public class assertionsTest {
 		// checkbox 1
 		WebElement checkbox1 = driver.findElement(By.xpath("//*[@id=\"checkboxes\"]/input[1]"));
 
-		Assert.assertFalse(checkbox1.isSelected());
+		AssertJUnit.assertFalse(checkbox1.isSelected());
 		// Assert.assertFalse(false); -- Pass
 		System.out.println("hello");
 
@@ -40,7 +40,7 @@ public class assertionsTest {
 
 		WebElement checkbox2 = driver.findElement(By.xpath("//*[@id=\"checkboxes\"]/input[2]"));
 
-		Assert.assertFalse(checkbox2.isSelected());
+		AssertJUnit.assertFalse(checkbox2.isSelected());
 		// Assert.assertFalse(true); --> failed
 		System.out.println("hello2");
 
@@ -49,7 +49,7 @@ public class assertionsTest {
 	@Test
 	public void assertTrueTest() {
 
-		Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"content\"]/div/h3")).isDisplayed());
+		AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"content\"]/div/h3")).isDisplayed());
 		System.out.println("code didn't throw an exception on assertTrueTest");
 		// Assert.assertTrue(true);
 
@@ -64,7 +64,7 @@ public class assertionsTest {
 		
 		
 		
-		Assert.assertEquals(actualTitle, expectedTitle);
+		AssertJUnit.assertEquals(actualTitle, expectedTitle);
 		
 		
 		

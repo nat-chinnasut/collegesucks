@@ -1,12 +1,12 @@
 package Day7;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,7 +20,7 @@ public class phpTravelsTest {
 	WebDriver driver;
 	private String url = "https://phptravels.com/demo";
 
-	@Before
+	@BeforeMethod
 	public void beforeMethod() {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
@@ -79,7 +79,7 @@ public class phpTravelsTest {
 				.click();
 		// verify if the Back to invoices visible
 		WebElement backToInvoicesButton = driver.findElement(By.xpath("/html/body/div/div[2]/div[2]"));
-		Assert.assertTrue(backToInvoicesButton.isDisplayed());
+		AssertJUnit.assertTrue(backToInvoicesButton.isDisplayed());
 		backToInvoicesButton.click();
 		// click yes
 		driver.findElement(By.xpath("/html/body/div/div[2]/div[1]/a")).click();

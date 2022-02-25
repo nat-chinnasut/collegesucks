@@ -1,12 +1,12 @@
 package ReviewSessions;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -48,7 +48,7 @@ public class nat_dressesCode {
 	By continueShopping = By.xpath("//*[@id='layer_cart']/div[1]/div[2]/div[4]/span/span");
 
 
-	@Before
+	@BeforeMethod
 	public void beforeTest() {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
@@ -56,7 +56,7 @@ public class nat_dressesCode {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	}
 	
-	@After
+	@AfterMethod
 	public void afterTest() {
 		driver.close();
 	}
@@ -165,7 +165,7 @@ public class nat_dressesCode {
 		driver.findElement(By.xpath("//*[@id=\"cart_navigation\"]/button/span")).click();
 		// verify completed
 		String orderVerify = driver.findElement(By.xpath("//*[@id=\"center_column\"]/p[1]")).getText().toLowerCase();
-		Assert.assertTrue(orderVerify.contains("complete"));
+		AssertJUnit.assertTrue(orderVerify.contains("complete"));
 		
 
 	}

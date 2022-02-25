@@ -1,8 +1,8 @@
 package Day2;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -11,7 +11,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class jUnitTestingExample {
 	
 	
-	@Before
+	@BeforeMethod
 	public void setUp() {
 //		WebDriver driver;
 //		WebDriverManager.chromedriver().setup();
@@ -20,7 +20,7 @@ public class jUnitTestingExample {
 		System.out.println("Opening Browser");
 	}
 	
-	@After
+	@AfterMethod
 	public void tearDown() {
 		
 		System.out.println("Closing Browser");

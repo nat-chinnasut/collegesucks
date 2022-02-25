@@ -1,9 +1,9 @@
 package Day8;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -15,7 +15,7 @@ public class propertiesClass {
 	WebDriver driver;
 	private String url = PropertiesReader.getProperty("url");
 
-	@Before
+	@BeforeMethod
 	public void beforeMethod() {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
