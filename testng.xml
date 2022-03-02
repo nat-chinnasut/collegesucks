@@ -1,42 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <test thread-count="5" name="Test">
-    <classes>
-      <class name="Day10.dependsOnTest"/>
-      <class name="ReviewSessions.ReviewRadioButtonsCechbox"/>
-      <class name="ReviewSessions.alertsReview"/>
-      <class name="Day5.alertsTesting"/>
-      <class name="Day7.iframeTest"/>
-      <class name="Day6.assertionsTest"/>
-      <class name="ReviewSessions.droDownFeruk"/>
-      <class name="ReviewSessions.alertWithFeruk"/>
-      <class name="ReviewSessions.ReviewWait"/>
-      <class name="Day2.openAndVerifyTitle"/>
-      <class name="Day3.checkboxintro"/>
-      <class name="Day2.webElementTesting"/>
-      <class name="Day7.windowHandlesTest"/>
-      <class name="Day10.groupTests"/>
-      <class name="ReviewSessions.nat_dressesCode"/>
-      <class name="Day5.checkSlidders"/>
-      <class name="ReviewSessions.TestCaseInClass"/>
-      <class name="Day4.implicitWaitExample"/>
-      <class name="Day5.amazonListItems"/>
-      <class name="utilities.Driver"/>
-      <class name="Day10.orderOfTests"/>
-      <class name="Day8.propertiesClass"/>
-      <class name="Day10.testingTestNGAnnotation"/>
-      <class name="Day6.actionClassTest"/>
-      <class name="Day5.arrayOfItemsVerify"/>
-      <class name="ReviewSessions.phanuwat_dressesTest"/>
-      <class name="Day3.automationSlidersTestCases"/>
-      <class name="Day4.dropDownTest"/>
-      <class name="Day2.jUnitTestingExample"/>
-      <class name="utilities.BaseClass"/>
-      <class name="Day6.actionClassAmazon"/>
-      <class name="Day9.TestingWebDriver"/>
-      <class name="Day7.phpTravelsTest"/>
-      <class name="Day2.amazonAutomationPracrice"/>
-    </classes>
-  </test> <!-- Test -->
+
+	<groups>
+		<run>
+			<include name="Smoke" />
+			<!-- <include name="Regression" /> -->
+			<!-- <exclude name = "Integration" /> -->
+		</run>
+	</groups>
+
+
+	<test thread-count="5" name="Test">
+		<classes>
+			<class name="Day10.dependsOnTest" />
+			<class name="ReviewSessions.ReviewRadioButtonsCechbox" />
+			<class name="ReviewSessions.alertsReview" />
+			<class name="Day5.alertsTesting" />
+			<class name="Day7.iframeTest" />
+			<class name="Day6.assertionsTest" />
+			<class name="ReviewSessions.droDownFeruk" />
+			<class name="ReviewSessions.alertWithFeruk" />
+			<class name="ReviewSessions.ReviewWait" />
+			<class name="Day2.openAndVerifyTitle" />
+			<class name="Day3.checkboxintro" />
+			<class name="Day2.webElementTesting" />
+			<class name="Day7.windowHandlesTest" />
+			<class name="Day10.groupTests" />
+			<class name="ReviewSessions.nat_dressesCode" />
+			<class name="Day5.checkSlidders" />
+			<class name="ReviewSessions.TestCaseInClass" />
+			<class name="Day4.implicitWaitExample" />
+			<class name="Day5.amazonListItems" />
+			<class name="utilities.Driver" />
+			<class name="Day10.orderOfTests" />
+			<class name="Day8.propertiesClass" />
+			<class name="Day10.testingTestNGAnnotation" />
+			<class name="Day6.actionClassTest" />
+			<class name="Day5.arrayOfItemsVerify" />
+			<class name="ReviewSessions.phanuwat_dressesTest" />
+			<class name="Day3.automationSlidersTestCases" />
+			<class name="Day4.dropDownTest" />
+			<class name="Day2.jUnitTestingExample" />
+			<class name="utilities.BaseClass" />
+			<class name="Day6.actionClassAmazon" />
+			<class name="Day9.TestingWebDriver" />
+			<class name="Day7.phpTravelsTest" />
+			<class name="Day2.amazonAutomationPracrice" />
+		</classes>
+	</test> <!-- Test -->
 </suite> <!-- Suite -->

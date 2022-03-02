@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Day10.dependsOnTest">
+      <class name="Day11.passingParameters">
         <methods>
-          <include name="OpenBrowser"/>
-          <include name="SignIn"/>
+          <include name="SumOf"/>
         </methods>
-      </class> <!-- Day10.dependsOnTest -->
+      </class> <!-- Day11.passingParameters -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
