@@ -11,16 +11,13 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-
 import utilities.Driver;
 import utilities.ListernersTestNG;
 import utilities.PropertiesReader;
 import utilities.commonMethods;
 
 @Listeners(ListernersTestNG.class)
-public class myAccountLogin extends commonMethods{
-	
-	
+public class myAccountLogin extends commonMethods {
 
 	@BeforeMethod
 	public void beforeTest() {
@@ -29,12 +26,12 @@ public class myAccountLogin extends commonMethods{
 		Driver.getDriver();
 	}
 
-	@Test(enabled=true)
+	@Test(enabled = false)
 	public void LoginWithValidUsernamePassword() {
 
 //	3) Click on My Account Menu
 		cp.myAccountTab.click();
-		
+
 //	4) Enter registered username in username textbox	
 //	5) Enter password in password textbox
 		myAPage.usernameField.sendKeys(PropertiesReader.getProperty("automationUsername"));
@@ -45,55 +42,43 @@ public class myAccountLogin extends commonMethods{
 //	7) User must successfully login to the web page	
 		myAPage.signOutButton.click();
 	}
-	
-	
-	@Test(enabled=false)
+
+	@Test(enabled = false)
 	public void LoginWithInvalidUsernameInvalidPassword() {
 
 //		3) Click on My Account Menu
-			Driver.getDriver().findElement(By.xpath("//*[@id=\"menu-item-50\"]")).click();
-//		4) Enter registered username in username textbox	
-//		5) Enter password in password textbox
-			Driver.getDriver().findElement(By.id("username")).sendKeys(PropertiesReader.getProperty("invalidUserName"));
-			Driver.getDriver().findElement(By.id("password")).sendKeys(PropertiesReader.getProperty("invalidPassword"));
+		cp.myAccountTab.click();
+//		4) Enter invalid username in username textbox	
+//		5) Enter invalid password in password textbox
+		myAPage.usernameField.sendKeys(PropertiesReader.getProperty("invalidUserName"));
+		myAPage.passwordField.sendKeys(PropertiesReader.getProperty("invalidPassword"));
 
 //		6) Click on login button
-			Driver.getDriver().findElement(By.xpath("//*[@id=\"customer_login\"]/div[1]/form/p[3]/input[3]")).click();
+		myAPage.loginButton.click();
 
 //		7) Proper error must be displayed(ie Invalid username) and prompt to enter login again
-		String actualErrorValue =	Driver.getDriver().findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/ul/li")).getText();
-		//System.out.println(error);
+		Assert.assertEquals(myALoginPage.errorNoficationTextBox.getText(),PropertiesReader.getProperty("errorUserCouldNotbeFound"));
 		
-		AssertJUnit.assertEquals(PropertiesReader.getProperty("errorUserCouldNotbeFound"), actualErrorValue);
-		
-		}
+
 	
-	
-	@Test(enabled=false)
+	}
+
+	@Test(enabled = true)
 	public void LoginWithValidUsernameEmptyPassword() {
 
 //		3) Click on My Account Menu
-			Driver.getDriver().findElement(By.xpath("//*[@id=\"menu-item-50\"]")).click();
+		cp.myAccountTab.click();
 //		4) Enter registered username in username textbox	
-//		5) Enter password in password textbox
-			Driver.getDriver().findElement(By.id("username")).sendKeys(PropertiesReader.getProperty("automationUsername"));
-			Driver.getDriver().findElement(By.id("password")).sendKeys("");
+//		5) Enter empty password in password textbox
+		myAPage.usernameField.sendKeys(PropertiesReader.getProperty("automationUsername"));
+		myAPage.passwordField.sendKeys("");
 
 //		6) Click on login button
-			Driver.getDriver().findElement(By.xpath("//*[@id=\"customer_login\"]/div[1]/form/p[3]/input[3]")).click();
+		myAPage.loginButton.click();
 
-//			7) Proper error must be displayed(ie Invalid password) and prompt to enter login again
+//		7) Proper error must be displayed(ie Invalid password) and prompt to enter login again
+		Assert.assertEquals(myALoginPage.errorNoficationTextBox.getText(),PropertiesReader.getProperty("errorInvalidPassword"));
 
-			String errorPassword = Driver.getDriver().findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/ul/li")).getText();
-
-			AssertJUnit.assertEquals(PropertiesReader.getProperty("errorInvalidPassword"), errorPassword);
-			
-			
-			
-		}
-	
-	
-	
-	
+	}
 
 }

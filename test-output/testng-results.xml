@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+<testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-03-03T20:38:03 EST" name="Default suite" finished-at="2022-03-03T20:38:21 EST" duration-ms="18467">
+  <suite name="Default suite" duration-ms="15352" started-at="2022-03-03T21:30:41 EST" finished-at="2022-03-03T21:30:56 EST">
     <groups>
     </groups>
-    <test started-at="2022-03-03T20:38:03 EST" name="Default test" finished-at="2022-03-03T20:38:21 EST" duration-ms="18467">
+    <test name="Default test" duration-ms="15352" started-at="2022-03-03T21:30:41 EST" finished-at="2022-03-03T21:30:56 EST">
       <class name="Day13.myAccountLogin">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:Day13.myAccountLogin@10e92f8f]" started-at="2022-03-03T20:38:03 EST" name="beforeTest" finished-at="2022-03-03T20:38:12 EST" duration-ms="8902" status="PASS">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:Day13.myAccountLogin@757942a1]" name="beforeTest" is-config="true" duration-ms="9514" started-at="2022-03-03T21:30:41 EST" finished-at="2022-03-03T21:30:51 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="LoginWithValidUsernamePassword()[pri:0, instance:Day13.myAccountLogin@10e92f8f]" started-at="2022-03-03T20:38:12 EST" name="LoginWithValidUsernamePassword" finished-at="2022-03-03T20:38:21 EST" duration-ms="9350" status="PASS">
+        <test-method status="PASS" signature="LoginWithValidUsernameEmptyPassword()[pri:0, instance:Day13.myAccountLogin@757942a1]" name="LoginWithValidUsernameEmptyPassword" duration-ms="5437" started-at="2022-03-03T21:30:51 EST" finished-at="2022-03-03T21:30:56 EST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LoginWithValidUsernamePassword -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Day13.myAccountLogin@10e92f8f]" started-at="2022-03-03T20:38:21 EST" name="tearDown" finished-at="2022-03-03T20:38:21 EST" duration-ms="159" status="PASS">
+        </test-method> <!-- LoginWithValidUsernameEmptyPassword -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:Day13.myAccountLogin@757942a1]" name="tearDown" is-config="true" duration-ms="332" started-at="2022-03-03T21:30:56 EST" finished-at="2022-03-03T21:30:56 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
