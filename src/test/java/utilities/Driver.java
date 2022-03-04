@@ -10,10 +10,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Driver {
 
-	private Driver() {
-
-	}
-
 	public static WebDriver driver;
 
 	public static WebDriver getDriver() {
@@ -28,6 +24,7 @@ public class Driver {
 				driver.get(PropertiesReader.getProperty("automationTestCaseURL"));
 				// maximize
 				driver.manage().window().maximize();
+				PageInitializer.initialize();
 
 				break;
 			case "chrome":
@@ -36,6 +33,7 @@ public class Driver {
 				driver.get(PropertiesReader.getProperty("automationTestCaseURL"));
 				// maximize
 				driver.manage().window().maximize();
+				PageInitializer.initialize();
 				break;
 			case "safari":
 				WebDriverManager.safaridriver().setup();
@@ -43,6 +41,7 @@ public class Driver {
 				driver.get(PropertiesReader.getProperty("automationTestCaseURL"));
 				// maximize
 				driver.manage().window().maximize();
+				PageInitializer.initialize();
 				break;
 			case "headless":
 				// code
